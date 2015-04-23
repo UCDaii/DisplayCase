@@ -1,9 +1,11 @@
+<?include("_lib/scripts/login.php");?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 </head>
 <body>
-<h1>DisplayCase</h1>
+<h1>Login</h1>
+
 </body>
 </html>
