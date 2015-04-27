@@ -34,6 +34,12 @@ header{
 	
 }
 
+.avatar img{
+
+	width:25px;
+
+}
+
 .log{
 	
 	float:right;
@@ -53,10 +59,9 @@ header{
 }
 
 .sideicons{
-	
+
 	width:25px;
 	height:25px;
-	background:white;
 	margin:10px;
 	margin-top:25px;
 }
@@ -64,9 +69,10 @@ header{
 .hero{
 	
 	width:100%;
-	height:425px;
+	height:500px;
 	background:black;
-	margin-top:25px;
+	margin-top:25px;	
+	background:url(../images/hero.jpg);
 }
 
 .toprated{
@@ -79,13 +85,45 @@ header{
 	font-size:36px;
 	margin-top:25px;
 }
+
+/** thumbnail images displayed beneath hero image, top rated of the week */
+
 .thumbs{
 	
 	width:20%;
 	margin-left:2.5%;
 	height:200px;
+	min-width:200px;
 	background: orange;
 	margin-top:25px;
 	margin-bottom:25px;
 	display:inline-block;
+	box-shadow: 5px 5px 5px #606060;
+}
+
+.thumbs img{
+
+	width:100%;
+	height:100%;
+}
+
+footer{
+
+	height:25px;
+	background:#E0E0E0;
+}
+
+footer a{
+
+	float:right;
+	margin-right:25px;
+	color:black;
+	margin-top:5px;
+	text-decoration:none;
+	
+}	
+
+footer a:hover{
+
+	color:orange;
 }
