@@ -11,7 +11,7 @@ header{
 	height:50px;
 	background: #E0E0E0 ;
 	position:fixed;
-	margin-top:-25px;
+	z-index:1;
 }
 
 .logo {
@@ -56,6 +56,7 @@ header{
 	height:425px;
 	position:fixed;
 	padding-top:25px;
+	z-index:1;
 }
 
 .sideicons{
@@ -71,10 +72,28 @@ header{
 	width:100%;
 	height:500px;
 	background:black;
-	margin-top:25px;	
+
 	background:url(../images/hero.jpg);
 }
 
+.herodesc{
+	
+	width:100%;
+	height:50px;
+	background:#606060;
+	opacity:.5;
+	margin-top:450px;
+	float:left;
+	z-index:-1;
+}
+
+.herodesc h1, h2{
+	
+	margin-left:70px;
+	margin-top:5px;
+	opacity:1;
+	color:white;
+}
 .toprated{
 	
 	margin-left:75px;
@@ -99,6 +118,7 @@ header{
 	margin-bottom:25px;
 	display:inline-block;
 	box-shadow: 5px 5px 5px #606060;
+	z-index:-1;
 }
 
 .thumbs img{
@@ -107,10 +127,23 @@ header{
 	height:100%;
 }
 
+.thumbs_desc
+{
+	
+	margin-top:10px;
+	float:left;
+	height:25px;
+	z-index:1;
+	margin-bottom:10px;
+	background:white;
+	
+}
+
 footer{
 
 	height:25px;
 	background:#E0E0E0;
+	margin-top:25px;
 }
 
 footer a{
