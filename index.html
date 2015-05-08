@@ -3,94 +3,92 @@
 <title>Display Case</title>
 
 <head>
-	
-	<link rel="stylesheet" type="text/css" href="_lib/css/reset.css"/>
+
+	<script src="_lib/js/foundation.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="_lib/css/foundation.min.css"/>
+	<link rel="stylesheet" type="text/css" href="_lib/css/normalize.css"/>
  	<link rel="stylesheet" type="text/css" href="_lib/css/css.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+
 
 </head>
 <body>
-	
-	<header>
-	<!---place holder div for logo-->	
-	<div class="logo">
-	</div>
-	
-	<!--place holder for avatar - only to be displayed when a user is logged in-->
-	<div class="avatar">
-	<img src="_lib/images/icons/avatar.png"/>
-	</div>
 
-	<a href="#" class="log">Log In</a>
-	</header>
 
-	<!--sticky sidebar navigation-->
+	<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="index.html">Display Case</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-dropdown">
+        <a href="#">Morgan</a>
+        <ul class="dropdown">
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">My Options</a></li>
+          <li class="active"><a href="#">Log Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav>
 	<div class="sidebar">
-		<div class="sideicons"><img src="http://bigfatcorki.de/wp-content/themes/CreativePortfolioResFree/images/flickr-icon.png"/></div>
-		<div class="sideicons"><img src="http://bigfatcorki.de/wp-content/themes/CreativePortfolioResFree/images/flickr-icon.png"/></div>
-		<div class="sideicons"><img src="http://bigfatcorki.de/wp-content/themes/CreativePortfolioResFree/images/flickr-icon.png"/></div>
-		<div class="sideicons"><img src="http://bigfatcorki.de/wp-content/themes/CreativePortfolioResFree/images/flickr-icon.png"/></div>
-		<div class="sideicons"><img src="http://bigfatcorki.de/wp-content/themes/CreativePortfolioResFree/images/flickr-icon.png"/></div>
-		<div class="sideicons"><img src="http://bigfatcorki.de/wp-content/themes/CreativePortfolioResFree/images/flickr-icon.png"/></div>
-		<div class="sideicons"><img src="http://bigfatcorki.de/wp-content/themes/CreativePortfolioResFree/images/flickr-icon.png"/></div>
-		<div class="sideicons"><img src="http://bigfatcorki.de/wp-content/themes/CreativePortfolioResFree/images/flickr-icon.png"/></div>
-	</div>
-	
-	<!--- containment div for the hero image-->
-	<div class="hero">
-			
-			
-	</div>
-	
-	<!-- div for 'top rated' thumbnails-->	
-	
-	<div class="toprated">
-		
-	<h1>Top Rated</h1>
-	
-	<div class="thumbs">
-					
-			<img src="http://media.philly.com/images/030112-Lorax-400.jpg"/>
-	
-	</div>
-	
-	<div class="thumbs">
-	
-	<img src="https://static.thumbtack.com/pictures/233/naajqxjl9lmc016_400.jpg"/>
-		
-	</div>
-	<div class="thumbs">
-
-	<img src="http://media.philly.com/images/032112-SpringFashion-400-2.jpg"/>
-
-			</div>
-	<div class="thumbs">
-		
-	   <img src="http://cdn.mkels.com/1/flat-long-shadow/acevvvedo-wolfpack-bowie-wolf_1x1.jpg"/>
-
-			</div>
-	<div class="thumbs">
-	   
-	   <img src="http://img5.visualizeus.com/thumbs/9a/9f/weird,disaster,survivors,ad,photography,creative-9a9ff887b20a78748557a9e5230f097a_h.jpg"/>
-
-			</div>
-	<div class="thumbs">
-		
-	   <img src="http://www.webdesign.org/img_articles/21726/09.jpg"/>
-
-		
-	</div>
-	<div class="thumbs">
-			<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR4ZGXfy3oZECdGX6d5P4Yh1JwIoEkPuhCUr0onFhaZNdS7cw3R"/>
+		<ul>
+			<li><a href="#"><img src="_lib/images/icons/color/an_clr.svg"/></a></li>
+			<li><a href="#"><img src="_lib/images/icons/color/art_clr.svg"/></a></li>
+			<li><a href="#"><img src="_lib/images/icons/color/cul_clr.svg"/></a></li>
+			<li><a href="#"><img src="_lib/images/icons/color/fash_clr.svg"/></a></li>
+			<li><a href="#"><img src="_lib/images/icons/color/gd_clr.svg"/></a></li>
+			<li><a href="#"><img src="_lib/images/icons/color/id_clr.svg"/></a></li>
+			<li><a href="#"><img src="_lib/images/icons/color/pht_clr.svg"/></a></li>
+			<li><a href="#"><img src="_lib/images/icons/color/web_clr.svg"/></a></li>
+		<ul>
 	
 	</div>
 
-	<div class="thumbs">
+	<div class="wrapper">
+	<!---container for hero image-->
 
-		<img src="http://www.thejc.com/files/imagecache/body_landscape/ET_1.jpg"/>
+	<div class="row hero">
+  	<div class="small-12 hero_desc">
+
+  		<h1>Zachary Gordon</h1>
+  		<h4>Spring Flower</h4>
+
+  	</div>
+
+  </div>
+  
+  	<div class="row  thumbnails">
+  		<h3>TOP RATED</h3>
+  			
+  					<ul class="small-block-grid-2 medium-block-grid-4">
+ 						<li><a href="#"><img src="_lib/images/projects/booktower.jpg"/></a></li>
+  						<li><a href="#"><img src="_lib/images/projects/booktower.jpg"/></a></li>
+  						<li><a href="#"><img src="_lib/images/projects/booktower.jpg"/></a></li>
+  						<li><a href="#"><img src="_lib/images/projects/booktower.jpg"/></a></li>
+  						<li><a href="#"><img src="_lib/images/projects/booktower.jpg"/></a></li>
+  						<li><a href="#"><img src="_lib/images/projects/booktower.jpg"/></a></li>
+  						<li><a href="#"><img src="_lib/images/projects/booktower.jpg"/></a></li>
+  						<li><a href="#"><img src="_lib/images/projects/booktower.jpg"/></a></li>
+  					</ul>
 
 
+  			</div>
+
+
+  	<
+ 
 	</div>
+
+	
 </div>
 
 <footer><a href="#">Term &amp Conditons</footer>

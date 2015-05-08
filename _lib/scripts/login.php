@@ -29,9 +29,8 @@ if(isset($_POST['UserName']) && isset($_POST['Password'])) {
 		}
 		exit();
 	} else {
-		echo 'That information is incorrect, try again <a href="Login.php">Click Here</a>';
+		header("loginError.php");
 		exit();
 	}
-
 }
 ?>
