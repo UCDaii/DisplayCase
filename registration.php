@@ -16,9 +16,10 @@
 	<input name="Phone" type="tel"/>
 	<input name="Age" type="number" required="true" />
 	<input name="City" type="textbox"/>
-	<input name="State" type="textbox"/> <!--Maybe a select?-->
-	<input name="Country" type="textbox"/> <!--Maybe a select?-->
-	<input name="MajorName" type="textbox"/>
+	<input name="State" type="textbox"/> <!--Select with state abbreviation-->
+	<input name="Country" type="textbox"/> <!--Select with countries-->
+	<input name="MajorName" type="textbox"/> 
+	<input name="CategoryName" type="textbox"> <!--Select with categories-->
 	<input name="CollegeName" type="textbox"/>
 	<button type="submit">Submit</button>
 </form>
