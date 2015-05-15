@@ -8,6 +8,7 @@ body{
 body h1, h2, h3, h4, h5 {
 
 	font-family: 'Quicksand', sans-serif;
+	margin: 0;
 }
 
 header{
@@ -25,6 +26,7 @@ header{
 	background-color: #A8A8A8;
 	position:fixed;
 	width:100%;
+	z-index: 2;
 }
 
 
@@ -34,25 +36,66 @@ header{
 
 .sidebar{
 	
-	width:50px;
-	background:#A8A8A8;
+	width:auto;
+	ackground:#A8A8A8;
+	background:#EEECE6;
 	float:left;
-	height:100%;
+	height:auto;
 	position:fixed;
 	margin-top:45px;
+	z-index: 2;
 }
 
 .sidebar ul{
-
+	float:left;
+	height:auto;
+	width: auto;
+	position:relative;
 	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
 
+.sidebar:hover{
+	width: auto;
+}
+
+.sidebar ul li{
+	height:auto;
+	position:relative;
+	display: block;
+	margin:0;
+	padding: 0;
+	text-align: left;
 }
 
 .sidebar ul li a img{
-
 	width:25px;
-	margin-left:-6px;
-	margin-top:10px;
+	display: inline-block;
+}
+
+.sidebar ul li a{
+	width: 100%;
+  	height: auto;
+  	position: relative;
+	display: inline-block;
+	padding:10px;
+}
+
+.sidebar ul li a p{
+	display: none;
+	margin-left: 15px;
+	margin-right: 10px;
+	margin-bottom:0;
+}
+
+.sidebar:hover p{
+	display: inline-block;
+}
+
+.sidebar ul li a:hover{
+	background:#A8A8A8;
+	color:#EEECE6;
 }
 
 /**-------------*/
@@ -62,15 +105,20 @@ header{
 .hero{
 	width:100%;
 	min-height: 500px;
+	position: relative;
 	background:black;
 	background:url(../images/projects/spring_flower.jpg);
+	background-size:100% auto;
+  	background-repeat: no-repeat;
+  	background-position: center;
 }
 
 .hero_desc{
-
-	margin-top:300px;
-	padding:5%;
+	position: absolute;
+	bottom: 10px;
+	padding:10px 10px 10px 55px;
 	width:50%;
+	background-color: rgba(255,255,255,0.75);
 }
 
 /**styles for top rated thumbnails */
@@ -80,6 +128,34 @@ header{
 	margin-top:30px;
 
 	}
+
+.box{
+	position: relative;
+	margin-bottom: 5px;
+	display: block;
+	box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+}
+
+.box span {
+    background: rgb(238,236,230); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(238,236,230,0.5) 0%, rgba(238,236,230,0.5) 50%, rgba(168,168,168,0.5) 50%, rgba(168,168,168,0.5) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(238,236,230,0.5)), color-stop(50%,rgba(238,236,230,0.5)), color-stop(50%,rgba(168,168,168,0.5)), color-stop(100%,rgba(168,168,168,0.5))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(238,236,230,0.5) 0%,rgba(238,236,230,0.5) 50%,rgba(168,168,168,0.5) 50%,rgba(168,168,168,0.5) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(238,236,230,0.5) 0%,rgba(238,236,230,0.5) 50%,rgba(168,168,168,0.5) 50%,rgba(168,168,168,0.5) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(238,236,230,0.5) 0%,rgba(238,236,230,0.5) 50%,rgba(168,168,168,0.5) 50%,rgba(168,168,168,0.5) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(238,236,230,0.5) 0%,rgba(238,236,230,0.5) 50%,rgba(168,168,168,0.5) 50%,rgba(168,168,168,0.5) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeece6', endColorstr='#a8a8a8',GradientType=0.5 ); /* IE6-9 fallback on horizontal gradient */
+    bottom: 0;
+    display: block;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.box:hover span { opacity: 0.5; }
 
 
 /** thumbnail images displayed beneath hero image, top rated of the week */
@@ -107,6 +183,52 @@ header{
 
 	color:#F37B76;
 }
+
+/**styles for profile page */
+
+.profileHead{
+	padding-top:2.8125rem;
+	width:100%;
+	height: 350px;
+	background:black;
+	background:url(../images/projects/spring_flower.jpg);
+	background-size:100% auto;
+  	background-repeat: no-repeat;
+  	background-position: center;
+  	position: relative;
+}
+
+.profileDesc{
+	margin:0;
+	padding:10px;
+	background-color: rgba(255,255,255,0.75);
+	bottom: 10px;
+	right:0;
+	position: absolute;
+}
+
+.profileAvatar{
+	height: 25%;
+	padding-bottom: 25%;
+	background-color: red;
+	bottom: 0;
+	position: absolute;
+}
+
+.bio{
+	height: auto;
+	background-color: white;
+}
+
+.bio p{
+	padding: 0;
+	margin: 0;
+}
+
+.profileProjects{
+	
+}
+
 footer{
 
 	height:35px;
@@ -125,5 +247,5 @@ footer a{
 
 footer a:hover{
 
-	color:orange;
+	color:#A8A8A8;
 }

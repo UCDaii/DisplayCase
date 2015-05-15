@@ -3,12 +3,12 @@ if(isset($_POST["Id"])){
 
 	$Id = $_POST["Id"];
 
-	require_once("mysql_conn.php");
+	require_once("mysqli_conn.php");
 	require_once("../api/users/profileApi.php");
 
-	$Count = mysql_num_rows($Result);
+	$Count = mysqli_num_rows($Result);
 	if ($Count == 1) {
-		while ($row = mysql_fetch_array($Result)){
+		while ($row = mysqli_fetch_array($Result)){
 			$Id = $row["Id"];
 			$UserName = $row["UserName"];
 			$FirstName = $row["FirstName"];
