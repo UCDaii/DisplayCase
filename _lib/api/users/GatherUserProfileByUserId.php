@@ -1,0 +1,3 @@
+<?
+$Sql = mysqli_query($conn, "SELECT Users.UserName, Users.FirstName, Users.LastName, Users.Email, Users.Description, Users.Resume, Users.Avatar, Majors.MajorName, Locations.City, Locations.State, Locations.Country, Colleges.CollegeName, Categories.CategoryName FROM Users JOIN Locations ON Users.LocationId=Locations.LocationId JOIN Colleges ON Users.CollegeId=Colleges.CollegeId JOIN Majors ON Users.MajorId=Majors.MajorId JOIN Categories ON Majors.CategoryId=Categories.CategoryId WHERE Users.UserId='8'");
+?>
