@@ -12,10 +12,17 @@ if(isset($_POST['UserName']) && isset($_POST['Password'])) {
 	if ($Count > 0) { // evaluate the count
 		while($Row = mysqli_fetch_array($Sql)){ 
 		    $Id = $Row["UserId"];
-		    $HPW = $Row["Password"];
+		    $HPW = $Row['Password'];
 		    $Permissions = $Row["Permissions"];
 		}
+		echo $Password;
+		echo "<br>";
+		echo $HPW;
+		echo "<br>";
+		echo strlen($HPW);
+		echo "<br>";
 		if(password_verify($Password, $HPW)){
+			echo "Password Success";
 			setcookie('UserName', $UserName, time()+60*60*24*30, 'www.displaycase.co');
 			setcookie('Password', $HPW, time()+60*60*24*30, 'wwww.displaycase.co');
 			switch ($Permissions){
@@ -33,7 +40,8 @@ if(isset($_POST['UserName']) && isset($_POST['Password'])) {
 			}
 			exit();
 		} else {
-			header("../../login.php");
+			echo "Password Verify Failed";
+			// header("../../login.php");
 		}
 	} else {
 		echo "Login Error";
