@@ -383,3 +383,9 @@ footer a:hover{
 
 	color:#A8A8A8;
 }
+
+@media (max-width: 900px) {
+  .hero, .profileHead{
+  	height:175px;
+  }
+}
