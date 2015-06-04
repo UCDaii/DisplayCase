@@ -1,35 +1,51 @@
-<?require_once("mysql_conn.php");?>
+<?require_once("mysqli_conn.php");?>
 <?
 if(isset($_POST['UserName']) && isset($_POST['Password'])) {
 
-	$UserName = $_POST['UserName'];
-	$Password = $_POST['Password'];
 
-	require_once("../api/users/loginApi.php");
+	$UserName = mysqli_real_escape_string($conn, $_POST['UserName']);
+	$Password = mysqli_real_escape_string($conn, $_POST['Password']);
 
-	$Count = mysql_num_rows($Result); // count the row nums
-	if ($Count == 1) { // evaluate the count
-		while($row = mysql_fetch_array($Result)){ 
-		    $Id = $row["Id"];
-		    $UserName = $row["UserName"];
-		    $Password = $row["Password"];
-		    $Permissions = $row["Permissions"];
+	include "../api/users/UserLogin.php";
+
+	$Count = mysqli_num_rows($Sql);
+	if ($Count > 0) { // evaluate the count
+		while($Row = mysqli_fetch_array($Sql)){ 
+		    $Id = $Row["UserId"];
+		    $HPW = $Row['Password'];
+		    $Permissions = $Row["Permissions"];
 		}
-		setcookie('UserName', $_POST['UserName'], time()+60*60*24*30, 'www.displaycase.co');
-		setcookie('Password', md5($_POST['Password']), time()+60*60*24*30, 'wwww.displaycase.co');
-		switch ($Permissions){
-			case 1:
-				header("location: ../../panelChoice.php");
-				break;
-			case 2:
-				header("location: ../../profile.php");
-				break;
-			default:
-				header("location: ../../index.php");
+		echo $Password;
+		echo "<br>";
+		echo $HPW;
+		echo "<br>";
+		echo strlen($HPW);
+		echo "<br>";
+		if(password_verify($Password, $HPW)){
+			echo "Password Success";
+			setcookie('UserName', $UserName, time()+60*60*24*30, 'www.displaycase.co');
+			setcookie('Password', $HPW, time()+60*60*24*30, 'wwww.displaycase.co');
+			switch ($Permissions){
+				case 1:
+					echo "Case 1";
+					// header("location: ../../panelChoice.php");
+					break;
+				case 2:
+					echo "Case 2";
+					// header("location: ../../index.html");
+					break;
+				default:
+					echo "Default";
+					// header("location: ../../index.php");
+			}
+			exit();
+		} else {
+			echo "Password Verify Failed";
+			// header("../../login.php");
 		}
-		exit();
 	} else {
-		header("loginError.php");
+		echo "Login Error";
+		// header("loginError.php");
 		exit();
 	}
 }

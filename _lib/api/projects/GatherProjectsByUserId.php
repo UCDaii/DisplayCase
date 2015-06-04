@@ -1,0 +1,3 @@
+<?
+$Sql = mysqli_query($conn, "SELECT Projects.ProjectId, Projects.ProjectName, Projects.ProjectDescription, Projects.Rating, Projects.DateAdded, Categories.CategoryName, ProjectMedia.FilePath FROM Projects JOIN Users ON Projects.UserId=Users.UserId JOIN Categories ON Projects.CategoryId=Categories.CategoryId JOIN ProjectMedia ON Projects.ProjectId=ProjectMedia.ProjectId WHERE ProjectMedia.ProjectMediaFeature='1' AND Users.UserId='$UserId'");
+?>
