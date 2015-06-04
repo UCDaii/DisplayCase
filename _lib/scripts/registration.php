@@ -20,7 +20,7 @@ if (isset($_POST['UserName'])) {
 	$CollegeId = 0;
 	$MajorId = 0;
 
-	$HashedPW = password_hash($Password, PASSWORD_BCRYPT, ["cost" => 5]);
+	$HashedPW = password_hash('$Password', PASSWORD_DEFAULT);
 
 	// Check if User is in DB
 	include "../api/users/GatherUserByUserName.php";
