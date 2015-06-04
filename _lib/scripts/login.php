@@ -1,4 +1,4 @@
-<?require_once("mysqli_conn.php");?>
+<? require_once("mysqli_conn.php");?>
 <?
 if(isset($_POST['UserName']) && isset($_POST['Password'])) {
 
@@ -15,28 +15,18 @@ if(isset($_POST['UserName']) && isset($_POST['Password'])) {
 		    $HPW = $Row['Password'];
 		    $Permissions = $Row["Permissions"];
 		}
-		echo $Password;
-		echo "<br>";
-		echo $HPW;
-		echo "<br>";
-		echo strlen($HPW);
-		echo "<br>";
 		if(password_verify($Password, $HPW)){
-			echo "Password Success";
 			setcookie('UserName', $UserName, time()+60*60*24*30, 'www.displaycase.co');
 			setcookie('Password', $HPW, time()+60*60*24*30, 'wwww.displaycase.co');
 			switch ($Permissions){
 				case 1:
-					echo "Case 1";
-					// header("location: ../../panelChoice.php");
+					header("location: ../../panelChoice.php");
 					break;
 				case 2:
-					echo "Case 2";
-					// header("location: ../../index.html");
+					header("location: ../../index.html");
 					break;
 				default:
-					echo "Default";
-					// header("location: ../../index.php");
+					header("location: ../../index.php");
 			}
 			exit();
 		} else {
@@ -44,8 +34,7 @@ if(isset($_POST['UserName']) && isset($_POST['Password'])) {
 			// header("../../login.php");
 		}
 	} else {
-		echo "Login Error";
-		// header("loginError.php");
+		header("loginError.php");
 		exit();
 	}
 }
