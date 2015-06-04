@@ -21,6 +21,25 @@ header{
 	margin-top:-25px;
 }
 
+
+
+/***MEDIA QUERIES FOR SIDEBAR AND MOBILE MENU **/
+
+@media screen and (max-width: 450px) {
+    .sidebar{
+        display: none;
+    }
+
+    .mobile_nav{
+
+    	display:show;
+    }
+}
+
+
+
+
+
 a:hover{
 	color:black;
 }
@@ -34,6 +53,34 @@ a:hover{
 	z-index: 2;
 	top: 0;
 }
+
+.top-bar-section li:not(.has-form) a:not(.button){
+
+	background:#A8A8A8;
+}
+
+.toggle-topbar img{
+
+	width:25px;
+}
+
+.has-dropdown img{
+
+	width:25px;
+	margin-right:5px;
+}
+
+.top-bar-section ul li>a{
+
+		font-family: 'Quicksand', sans-serif;
+		font-size:16px;
+}
+
+.top-bar-section .dropdown li:not(.has-form):not(.active)>a:not(.button){
+
+	background:#A8A8A8;
+}
+
 
 .name{
 	height: 45px;
@@ -55,11 +102,12 @@ a:hover{
 
 /**Styles for Sticky Sidebar */
 
+
+
 .sidebar{
 	
 	width:auto;
 	background:#A8A8A8;
-	ackground:#EEECE6;
 	float:left;
 	height:100%;
 	position:fixed;
@@ -147,6 +195,8 @@ a:hover{
 #websiteBackground:hover{
 	background-color: #ECC671;
 }
+
+
 
 
 /**----Styles For Icons----**/
@@ -292,7 +342,7 @@ a:hover{
 .project_feat{
 
 	margin:0 auto;
-	margin-top:75px;
+	margin-top:25px;
 }
 
 .project img{
@@ -303,8 +353,21 @@ a:hover{
 .project h4{
 
 	color:#F37B76;
+	background:white;
+	line-height: 2;
+	}
+
+.project h5{
+	background: white;
+	line-height: 2;
 }
 
+.project p{
+ 
+	background:white;
+	line-height: 2;
+	font-size:14px;
+}
 /**styles for profile page */
 
 .profileHead{
@@ -382,10 +445,4 @@ footer a{
 footer a:hover{
 
 	color:#A8A8A8;
-}
-
-@media (max-width: 900px) {
-  .hero, .profileHead{
-  	height:175px;
-  }
 }

@@ -21,9 +21,10 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-
-	<script src="_lib/js/foundation.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="_lib/css/foundation.min.css"/>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="_lib/js/foundation.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="_lib/css/foundation.css"/>
 	<link rel="stylesheet" type="text/css" href="_lib/css/normalize.css"/>
  	<link rel="stylesheet" type="text/css" href="_lib/css/css.css"/>
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -89,23 +90,52 @@
     </div>
 
   </div>
-  
+ 
   
   	<div class="row  thumbnails">
   		<div class="bio medium-3 columns">
-        
-        <h5>CONTACT</h5>
-        <p>dave@gmail</p>
+         <ul class="accordion profile_acc" data-accordion role="tablist">
+  <li class="accordion-navigation">
+    <a href="#panel1d" role="tab" id="panel1d-heading" aria-controls="panel1d">Contact Info</a>
+    <div id="panel1d" class="content active" role="tabpanel" aria-labelledby="panel1d-heading">
+      <p>dave@gmail</p>
         <p>(317)555-5555</p>
         <p>IN, Indiana</p>
-        <h5>EDUCATION</h5>
-        <p>May 2015</p>
+    </div>
+  </li>
+  <li class="accordion-navigation">
+    <a href="#panel2d"  role="tab" id="panel2d-heading" aria-controls="panel2d">Education</a>
+    <div id="panel2d" class="content" role="tabpanel" aria-labelledby="panel2d-heading">
+      <p>May 2015</p>
         <p>Art Institute</p>
-        <h5>DETAILS</h5>
-        <p>Skills</p>
-        <p>Bio</p>
-        <h5>RESUME</h5>
-        <p><a href="#">resume</a></p>
+
+
+    </div>
+  </li>
+  <li class="accordion-navigation">
+    <a href="#panel3d" role="tab" id="panel3d-heading" aria-controls="panel3d">Details</a>
+    <div id="panel3d" class="content" role="tabpanel" aria-labelledby="panel3d-heading">
+
+      <p>Skills</p>
+
+      <p>Bio</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation.</p>
+
+    </div>
+  </li>
+
+   <li class="accordion-navigation">
+    <a href="#panel4d" role="tab" id="panel4d-heading" aria-controls="panel4d">Resume</a>
+    <div id="panel4d" class="content" role="tabpanel" aria-labelledby="panel4d-heading">
+
+      <a href="#">Download My Resume</a>
+
+    </div>
+  </li>
+</ul>
+
       </div>
   		<div class="profileProjects medium-9 columns">
   					<h3>MOST RECENT</h3>
@@ -149,6 +179,24 @@
 </div>
 
 <footer><a href="#">Term &amp Conditons</footer>
+
+<script src="_lib/js/foundation/foundation.accordion.js"></script>
+
+<script>
+$(document).foundation({
+  accordion: {
+    // specify the class used for accordion panels
+    content_class: 'content',
+    // specify the class used for active (or open) accordion panels
+    active_class: 'active',
+    // allow multiple accordion panels to be active at the same time
+    multi_expand: false,
+    // allow accordion panels to be closed by clicking on their headers
+    // setting to false only closes accordion panels when another is opened
+    toggleable: true
+  }
+});
+</script>
 </body>
 
 
