@@ -21,24 +21,13 @@ header{
 	margin-top:-25px;
 }
 
-
-
-/***MEDIA QUERIES FOR SIDEBAR AND MOBILE MENU **/
-
-@media screen and (max-width: 450px) {
-    .sidebar{
-        display: none;
-    }
-
-    .mobile_nav{
-
-    	display:show;
-    }
+#mobileNav{
+	display: none;
 }
 
-
-
-
+[class*="block-grid-"]{
+	width: 100%;
+}
 
 a:hover{
 	color:black;
@@ -96,6 +85,28 @@ a:hover{
 	background-position: center center;
 	background-size: contain;
 	margin:0px 10px;
+}
+
+.dropdown li{
+	display: block;
+	height: auto;
+	width: auto;
+}
+
+.dropdown li a{
+	display: inline-block;
+	height: auto;
+	width: auto;
+}
+
+.dropdown li a p{
+	margin-bottom: 0px;
+	display: inline-block;
+}
+
+.dropdown li a img{
+	display: inline-block;
+
 }
 
 /**-------------*/
@@ -269,7 +280,7 @@ a:hover{
 
 .hero{
 	width:100%;
-	min-height: 500px;
+	height: 500px;
 	position: relative;
 	background:black;
 	background:url(../images/projects/spring_flower.jpg);
@@ -368,6 +379,7 @@ a:hover{
 	line-height: 2;
 	font-size:14px;
 }
+
 /**styles for profile page */
 
 .profileHead{
@@ -376,21 +388,21 @@ a:hover{
 	height: 350px;
 	background:black;
 	background:url(../images/projects/spring_flower.jpg);
-	background-size:100% auto;
+	background-size:cover;
   	background-repeat: no-repeat;
   	background-position: center;
   	position: relative;
 }
 
 .profileDesc{
-	margin:0;
-	padding:0 15px;
-	background-color: rgba(255,255,255,0.75);
-	bottom: 10px;
-	right:0;
-	width:75%;
-	position: absolute;
-	
+	margin: 0;
+	padding: 0 15px 0 27%;
+  	background-color: rgba(255,255,255,0.75);
+  	bottom: 10px;
+  	right: 0;
+  	width: 100%;
+  	position: absolute;
+  	text-align: left;
 }
 
 .profileAvatar{
@@ -445,4 +457,63 @@ footer a{
 footer a:hover{
 
 	color:#A8A8A8;
+}
+
+@media (max-width: 900px) {
+  .hero, .profileHead{
+  	height:175px;
+  }
+
+  .hero_desc{
+  	width: 100%;
+  	padding: 10px;
+  }
+
+  .sidebar{
+  	display: none;
+  }
+
+  #mobileNav{
+  	display: block;
+  }
+
+  .profileAvatar{
+	padding-bottom: 18%;
+	width: 18%;
+  	border:2px solid white;
+  	text-align: right;
+  }
+
+  .profileDesc{
+  	padding: 0 15px 0 20%;
+  }
+
+  h1{
+  	font-size: 1.5em;
+  }
+
+  h3{
+  	font-size: 1em;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+	.hero, .profileHead{
+  		height:150px;
+  	}
+
+	.profileAvatar{
+		padding-bottom: none;
+  		width: 130px;
+  		height: 130px;
+  		border: 2px solid white;
+  		text-align: right;
+  	}
+
+	.profileDesc{
+  		padding: 0 15px 0 140px;
+  	}
+
 }
