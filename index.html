@@ -22,12 +22,13 @@
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-	<script src="_lib/js/foundation.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="_lib/css/foundation.css"/>
-	<link rel="stylesheet" type="text/css" href="_lib/css/normalize.css"/>
- 	<link rel="stylesheet" type="text/css" href="_lib/css/css.css"/>
-	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="_lib/js/foundation.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="_lib/css/foundation.css"/>
+  <link rel="stylesheet" type="text/css" href="_lib/css/normalize.css"/>
+  <link rel="stylesheet" type="text/css" href="_lib/css/css.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
   <script src="_lib/js/app.js"></script>
 
 
@@ -46,32 +47,43 @@
   </ul>
 
   <section class="top-bar-section">
-    
-
-
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="has-dropdown">
         <a href="#"><img src="_lib/images/icons/avatar.png"/>Morgan</a>
         <ul class="dropdown">
-          <li><a href="#">Profile</a></li>
+          <li><a href="profile.html">Profile</a></li>
           <li><a href="#">Options</a></li>
           <li><a href="#">Sign Out</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown" id="mobileNav">
+        <a href="#">Catagory</a>
+        <ul class="dropdown">
+          <li><a href="catagory.html" id="animationBackground"><img src="_lib/images/icons/light/an_lgt.svg"/><p>Animation</p></a></li>
+          <li><a href="catagory.html" id="fineartBackground"><img src="_lib/images/icons/light/art_lgt.svg"/><p>Fine Art</p></a></li>
+          <li><a href="catagory.html" id="culinaryBackground"><img src="_lib/images/icons/light/cul_lgt.svg"/><p>Culinary</p></a></li>
+          <li><a href="catagory.html" id="fashionBackground"><img src="_lib/images/icons/light/fash_lgt.svg"/><p>Fashion</p></a></li>
+          <li><a href="catagory.html" id="graphicBackground"><img src="_lib/images/icons/light/gd_lgt.svg"/><p>Grahpic Design</p></a></li>
+          <li><a href="catagory.html" id="interiorBackground"><img src="_lib/images/icons/light/id_lgt.svg"/><p>Interior Design</p></a></li>
+          <li><a href="catagory.html" id="photographyBackground"><img src="_lib/images/icons/light/pht_lgt.svg"/><p>Photography</p></a></li>
+          <li><a href="catagory.html" id="websiteBackground"><img src="_lib/images/icons/light/web_lgt.svg"/><p>Web Design</p></a></li>
         </ul>
       </li>
     </ul>
   </section>
 </nav>
+
   <div class="sidebar">
     <ul>
-      <li><a href="#" id="animationBackground"><img src="_lib/images/icons/light/an_lgt.svg"/><p>Animation</p></a></li>
-      <li><a href="#" id="fineartBackground"><img src="_lib/images/icons/light/art_lgt.svg"/><p>Fine Art</p></a></li>
-      <li><a href="#" id="culinaryBackground"><img src="_lib/images/icons/light/cul_lgt.svg"/><p>Culinary</p></a></li>
-      <li><a href="#" id="fashionBackground"><img src="_lib/images/icons/light/fash_lgt.svg"/><p>Fashion</p></a></li>
-      <li><a href="#" id="graphicBackground"><img src="_lib/images/icons/light/gd_lgt.svg"/><p>Grahpic Design</p></a></li>
-      <li><a href="#" id="interiorBackground"><img src="_lib/images/icons/light/id_lgt.svg"/><p>Interior Design</p></a></li>
-      <li><a href="#" id="photographyBackground"><img src="_lib/images/icons/light/pht_lgt.svg"/><p>Photography</p></a></li>
-      <li><a href="#" id="websiteBackground"><img src="_lib/images/icons/light/web_lgt.svg"/><p>Web Design</p></a></li>
+      <li><a href="catagory.html" id="animationBackground"><img src="_lib/images/icons/light/an_lgt.svg"/><p>Animation</p></a></li>
+      <li><a href="catagory.html" id="fineartBackground"><img src="_lib/images/icons/light/art_lgt.svg"/><p>Fine Art</p></a></li>
+      <li><a href="catagory.html" id="culinaryBackground"><img src="_lib/images/icons/light/cul_lgt.svg"/><p>Culinary</p></a></li>
+      <li><a href="catagory.html" id="fashionBackground"><img src="_lib/images/icons/light/fash_lgt.svg"/><p>Fashion</p></a></li>
+      <li><a href="catagory.html" id="graphicBackground"><img src="_lib/images/icons/light/gd_lgt.svg"/><p>Grahpic Design</p></a></li>
+      <li><a href="catagory.html" id="interiorBackground"><img src="_lib/images/icons/light/id_lgt.svg"/><p>Interior Design</p></a></li>
+      <li><a href="catagory.html" id="photographyBackground"><img src="_lib/images/icons/light/pht_lgt.svg"/><p>Photography</p></a></li>
+      <li><a href="catagory.html" id="websiteBackground"><img src="_lib/images/icons/light/web_lgt.svg"/><p>Web Design</p></a></li>
     <ul>
   </div>
 
@@ -127,6 +139,25 @@
 </div>
 
 <footer><a href="#">Term &amp Conditons</footer>
+
+<script src="_lib/js/foundation/foundation.accordion.js"></script>
+
+<script>
+$(document).foundation({
+  accordion: {
+    // specify the class used for accordion panels
+    content_class: 'content',
+    // specify the class used for active (or open) accordion panels
+    active_class: 'active',
+    // allow multiple accordion panels to be active at the same time
+    multi_expand: false,
+    // allow accordion panels to be closed by clicking on their headers
+    // setting to false only closes accordion panels when another is opened
+    toggleable: true
+  }
+});
+</script>
+
 </body>
 
 
