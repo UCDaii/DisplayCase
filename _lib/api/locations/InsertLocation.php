@@ -1,0 +1,1 @@
+<? $Sql = mysqli_query($conn, "INSERT INTO Locations (City, State, Country) VALUES ('$City', '$State', '$Country')") or die ("InsertLocation Failed"); ?>
