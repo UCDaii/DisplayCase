@@ -1,7 +1,7 @@
 <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <a href="index.html"></a>
+        <a href="index.php"></a>
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span><img src="_lib/images/icons/avatar.png"/></span></a></li>
