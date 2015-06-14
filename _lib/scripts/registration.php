@@ -20,7 +20,7 @@ if (isset($_POST['UserName'])) {
 	$CollegeId = 0;
 	$MajorId = 0;
 
-	$HashedPW = password_hash('$Password', PASSWORD_DEFAULT);
+	$HashedPW = password_hash($Password, PASSWORD_DEFAULT);
 
 	// Check if User is in DB
 	include "../api/users/GatherUserByUserName.php";
@@ -93,5 +93,14 @@ if (isset($_POST['UserName'])) {
 	}
 
 	include "../api/users/InsertUser.php";
+	include "../api/users/GatherUserByUserName.php";
+	$Count = mysqli_num_rows($Sql); // count the row nums
+	if ($Count > 0) { // evaluate the count
+		while($Row = mysqli_fetch_array($Sql)){ 
+		    $UserId = $Row["UserId"];
+		}
+	}
+
+	header('Location: ../../profile.php?UserId=' . $UserId);
 }
 ?>

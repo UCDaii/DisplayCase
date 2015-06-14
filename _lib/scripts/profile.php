@@ -1,17 +1,18 @@
 <? include "mysqli_conn.php";?>
 <?
-if(isset($_GET["UserId"]))){
+if(isset($_GET["UserId"])){
 
 	$UserId = $_GET["UserId"];
 
 	// Get User Info
-	include "../api/users/GatherUserProfileByUserId.php";
+	include ($_SERVER['DOCUMENT_ROOT'].'/_lib/api/users/GatherUserProfileByUserId.php');
 	$Count = mysqli_num_rows($Sql);
 	if($Count > 0){
 		while($Row = mysqli_fetch_array($Sql)){
 			$FirstName = $Row["FirstName"];
 			$LastName = $Row["LastName"];
 			$Email = $Row["Email"];
+			$Description = $Row["Description"];
 			$City = $Row["City"];
 			$State = $Row["State"];
 			$Country = $Row["Country"];
@@ -22,7 +23,7 @@ if(isset($_GET["UserId"]))){
 	}
 
 	// Get User Projects
-	include "../api/projects/GatherProjectsByUserId.php";
+	include ($_SERVER['DOCUMENT_ROOT'].'/_lib/api/projects/GatherProjectsByUserId.php');
 	$Count = mysqli_num_rows($Sql);
 	if($Count > 0){
 		while($Row = mysqli_fetch_array($Sql)){
@@ -33,5 +34,7 @@ if(isset($_GET["UserId"]))){
 		}
 	}
 
+} else {
+	header('Location: index');
 }
 ?>

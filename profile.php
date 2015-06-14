@@ -1,133 +1,75 @@
 <? include "_lib/scripts/profile.php"; ?>
-<!DOCTYPE HTML>
-<html>
-<title>Display Case</title>
-
-<head>
-
-  <link rel="apple-touch-icon" sizes="57x57" href="_lib/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="_lib/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="_lib/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="_lib/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="_lib/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="_lib/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="_lib/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="_lib/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="_lib/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="_lib/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="_lib/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="_lib/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="_lib/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-
-  <script src="_lib/js/foundation.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="_lib/css/foundation.min.css"/>
-  <link rel="stylesheet" type="text/css" href="_lib/css/normalize.css"/>
-  <link rel="stylesheet" type="text/css" href="_lib/css/css.css"/>
-  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-  <script src="_lib/js/app.js"></script>
-
-
-</head>
-<body>
-
-
-  <nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="index.html"><mg src="_lib/favicon/apple-icon-120x120.png" width="25" height="25">Display Case</a></h1>
-    </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="has-dropdown">
-        <a href="#">Morgan</a>
-        <ul class="dropdown">
-          <li><a href="#">My Account</a></li>
-          <li><a href="#">My Options</a></li>
-          <li class="active"><a href="#">Log Out</a></li>
-        </ul>
-      </li>
-    </ul>
-  </section>
-</nav>
-  <div class="sidebar">
-    <ul>
-      <li><a href="#"><img src="_lib/images/icons/color/an_clr.svg"/><p>Animation</p></a></li>
-      <li><a href="#"><img src="_lib/images/icons/color/art_clr.svg"/><p>Fine Art</p></a></li>
-      <li><a href="#"><img src="_lib/images/icons/color/cul_clr.svg"/><p>Culinary</p></a></li>
-      <li><a href="#"><img src="_lib/images/icons/color/fash_clr.svg"/><p>Fashion</p></a></li>
-      <li><a href="#"><img src="_lib/images/icons/color/gd_clr.svg"/><p>Grahpic Design</p></a></li>
-      <li><a href="#"><img src="_lib/images/icons/color/id_clr.svg"/><p>Interior Design</p></a></li>
-      <li><a href="#"><img src="_lib/images/icons/color/pht_clr.svg"/><p>Photography</p></a></li>
-      <li><a href="#"><img src="_lib/images/icons/color/web_clr.svg"/><p>Web Design</p></a></li>
-    <ul>
-  
-  </div>
-
-  <div class="wrapper">
-  <!---container for hero image-->
-
-  <div class="row profileHead">
-     <div class="profileAvatar small-3 columns">
-
-      </div>
-    <div class="profileDesc small-9 columns">
-
-      <h1><? echo $FirstName, $LastName;?></h1>
-      <h3><? echo $MajorName;?></h3>
-
+<? include "head.php"; ?>
+<div class=" profileHead">
+  	<div class="row" style=" position:relative; height:100%;">
+        <div class="profileAvatar columns" style="background-image:url(_lib/images/profile/11966331.jpg);"></div> <!-- Display Profile Avatar -->
+        <div class="profileDesc columns">
+      		<h1><? echo $FirstName . " " . $LastName; ?></h1>
+      		<h3><? echo $Major; ?></h3>
+      	</div>
     </div>
-
-  </div>
-  
-    <div class="row  thumbnails">
-      <div class="bio medium-3 columns">
-        <h5>CONTACT</h5>
-        <p><? echo $Email;?></p>
-        <p><? echo $City;?></p>
-        <h5>EDUCATION</h5>
-        <p><? echo $CollegeName;?></p>
-        <h5>DETAILS</h5>
-        <p>Skills</p>
-        <p>Bio</p>
-        <h5>RESUME</h5>
-        <p><a href="#">resume</a></p>
-      </div>
-      <div class="profileProjects medium-9 columns">
-            <h3>MOST RECENT</h3>
-        
-            <ul class="small-block-grid-2 medium-block-grid-4">
-              <li><a class="box" href="project.html"><img src="_lib/images/projects/booktower.jpg"/> <span></span></a> <h5>Book Tower</h5></li>
-              <li><a class="box" href="#"><img src="_lib/images/projects/booktower.jpg"/> <span></span></a></li>
-              <li><a class="box" href="#"><img src="_lib/images/projects/booktower.jpg"/> <span></span></a></li>
-              <li><a class="box" href="#"><img src="_lib/images/projects/booktower.jpg"/> <span></span></a></li>
-              <li><a class="box" href="#"><img src="_lib/images/projects/booktower.jpg"/> <span></span></a></li>
-              <li><a class="box" href="#"><img src="_lib/images/projects/booktower.jpg"/> <span></span></a></li>
-              <li><a class="box" href="#"><img src="_lib/images/projects/booktower.jpg"/> <span></span></a></li>
-              <li><a class="box" href="#"><img src="_lib/images/projects/booktower.jpg"/> <span></span></a></li>
-            </ul>
-      </div>
-    </div>
-
-
-    <
- 
-  </div>
-
-  
 </div>
 
-<footer><a href="#">Term &amp Conditons</footer>
-</body>
+<div class="row  thumbnails">
+	<div class="bio medium-3 columns">
+        <ul class="accordion profile_acc" data-accordion role="tablist">
+            <li class="accordion-navigation">
+                <a href="#panel1d" role="tab" id="panel1d-heading" aria-controls="panel1d">Contact Info</a>
+                <div id="panel1d" class="content active" role="tabpanel" aria-labelledby="panel1d-heading">
+                    <a href="mailto:<? echo $Email;?> "><? echo $Email; ?></a>
+                    <p><? echo $City . ", " . $State; ?></p>
+                </div>
+            </li>
+            <li class="accordion-navigation">
+                <a href="#panel2d"  role="tab" id="panel2d-heading" aria-controls="panel2d">Education</a>
+                <div id="panel2d" class="content" role="tabpanel" aria-labelledby="panel2d-heading">
+                    <p><? echo $College; ?></p>
+                </div>
+            </li>
+            <li class="accordion-navigation">
+                <a href="#panel3d" role="tab" id="panel3d-heading" aria-controls="panel3d">Details</a>
+                <div id="panel3d" class="content" role="tabpanel" aria-labelledby="panel3d-heading">
+                    <p>Description</p>
+                    <p><? echo $Description; ?></p>
+                </div>
+            </li>
+            <li class="accordion-navigation">
+                <a href="#panel4d" role="tab" id="panel4d-heading" aria-controls="panel4d">Resume</a>
+                <div id="panel4d" class="content" role="tabpanel" aria-labelledby="panel4d-heading">
+                    <a href="#">Download My Resume</a> <!-- Link to Download Resume -->
+                </div>
+            </li>
+        </ul>
+    </div>
+		<div class="profileProjects medium-9 columns">
+			<h3>MOST RECENT</h3>
+        <ul class="small-block-grid-2 medium-block-grid-2">
+            <li><a class="box" href="#" style="background-image:url(_lib/images/projects/redskins_5.jpg);"> <span></span></a>
+                <h4>Book Tower</h4>
+            </li>
+            <li><a class="box" href="#" style="background-image:url(_lib/images/projects/booktower.jpg);"> <span></span></a>
+                <h4>Book Tower</h4>
+            </li>
+            <li><a class="box" href="#" style="background-image:url(_lib/images/projects/digital1.jpg);"> <span></span></a>
+                <h4>Book Tower</h4>
+            </li>
+            <li><a class="box" href="#" style="background-image:url(_lib/images/projects/final_owl.png);"> <span></span></a>
+                <h4>Book Tower</h4>
+            </li>
+            <li><a class="box" href="#" style="background-image:url(_lib/images/projects/jones_beats.jpg);"> <span></span></a>
+                <h4>Book Tower</h4>
+            </li>
+            <li><a class="box" href="#" style="background-image:url(_lib/images/projects/tiger.jpg);"> <span></span></a>
+                <h4>Book Tower</h4>
+            </li>
+            <li><a class="box" href="#" style="background-image:url(_lib/images/projects/redskins3.jpg);"> <span></span></a>
+                <h4>Book Tower</h4>
+            </li>
+            <li><a class="box" href="#" style="background-image:url(_lib/images/projects/digital2.jpg);"> <span></span></a>
+                <h4>Book Tower</h4>
+            </li>
+        </ul>
+    </div>
+</div>
 
-
-</html>
+<? include "footer.php"; ?>

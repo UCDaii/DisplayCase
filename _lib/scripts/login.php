@@ -12,40 +12,28 @@ if(isset($_POST['UserName']) && isset($_POST['Password'])) {
 	if ($Count > 0) { // evaluate the count
 		while($Row = mysqli_fetch_array($Sql)){ 
 		    $Id = $Row["UserId"];
-		    $HPW = $Row['Password'];
+		    $HPW = $Row["Password"];
 		    $Permissions = $Row["Permissions"];
 		}
-		echo $Password;
-		echo "<br>";
-		echo $HPW;
-		echo "<br>";
-		echo strlen($HPW);
-		echo "<br>";
 		if(password_verify($Password, $HPW)){
-			echo "Password Success";
-			setcookie('UserName', $UserName, time()+60*60*24*30, 'www.displaycase.co');
-			setcookie('Password', $HPW, time()+60*60*24*30, 'wwww.displaycase.co');
+			setcookie('UserName', $UserName, time()+(60*60*24*30), "/", "displaycase.co");
+			setcookie('Password', $HPW, time()+(60*60*24*30), "/", "displaycase.co");
 			switch ($Permissions){
 				case 1:
-					echo "Case 1";
-					// header("location: ../../panelChoice.php");
+					header("location: ../../panelChoice");
 					break;
 				case 2:
-					echo "Case 2";
-					// header("location: ../../index.html");
+					header("location: ../../index");
 					break;
 				default:
-					echo "Default";
-					// header("location: ../../index.php");
+					header("location: ../../index");
 			}
 			exit();
 		} else {
-			echo "Password Verify Failed";
-			// header("../../login.php");
+			header("../../login.php");
 		}
 	} else {
-		echo "Login Error";
-		// header("loginError.php");
+		header("loginError.php");
 		exit();
 	}
 }
