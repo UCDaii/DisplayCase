@@ -9,6 +9,7 @@ if(isset($_GET["UserId"])){
 	$Count = mysqli_num_rows($Sql);
 	if($Count > 0){
 		while($Row = mysqli_fetch_array($Sql)){
+			$UserName = $Row["UserName"];
 			$FirstName = $Row["FirstName"];
 			$LastName = $Row["LastName"];
 			$Email = $Row["Email"];
@@ -19,6 +20,7 @@ if(isset($_GET["UserId"])){
 			$Major = $Row["MajorName"];
 			$Category = $Row["CategoryName"];
 			$College = $Row["CollegeName"];
+			$Avatar = $Row["Avatar"];
 		}
 	}
 

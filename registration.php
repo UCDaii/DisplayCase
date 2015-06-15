@@ -1,6 +1,9 @@
-<? include "head.php"; ?>
+<? include "_lib/scripts/states.php"; ?>
+<? include "_lib/scripts/countries.php"; ?>
+<? include "_lib/scripts/schools.php"; ?>
 <? include "_lib/scripts/mysqli_conn.php"; ?>
 <? include "_lib/scripts/categories.php"; ?>
+<? include "head.php"; ?>
 
 <div class="row">
 
@@ -15,18 +18,42 @@
 	<label>Phone: </label><input id="phone" name="Phone" type="tel"/><br>
 	<label>Age: </label><input name="Age" type="number" required="true" /><br>
 	<label>City: </label><input name="City" type="text" required="true"/><br>
-	<label>State: </label><input name="State" type="text" required="true"/> <br><!--Select with state abbreviation-->
-	<label>Country: </label><input name="Country" type="text" required="true"/><br><!--Select with countries-->
+	<label>State: </label>
+	<select name="State" required="true">
+	<?
+	foreach($States as $value):
+		echo '<option value="' . $value . '">' . $value . '</option>';
+	endforeach;
+	?>
+	</select>
+	<br>
+	<label>Country: </label>
+	<select name="Country" required="true"/>
+	<?
+	foreach ($Countries as $value):
+		echo '<option value="' . $value . '">' . $value . '</option>';
+	endforeach;
+	?>
+	</select>
+	<br>
 	<label>Major: </label><input name="MajorName" type="text" required="true"/><br>
 	<label>Major Category: </label>
 	<select name="CategoryName" required="true">
 	<?
 	foreach($CategoryName as $value):
-	echo '<option value="' .$value. '">' .$value. '</option>';
+		echo '<option value="' .$value. '">' .$value. '</option>';
 	endforeach;
 	?>
 	</select><br>
-	<label>College: </label><input name="CollegeName" type="text" required="true"/><br>
+	<label>College: </label>
+	<select name="CollegeName" required="true"/>
+	<?
+	foreach ($Schools as $value):
+		echo '<option value="' . $value . '">' . $value . '</option>';
+	endforeach;
+	?>
+	</select>
+	<br>
 	<button type="submit">Submit</button>
 </form>
 

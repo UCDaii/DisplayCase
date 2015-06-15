@@ -1,8 +1,18 @@
 <? include "_lib/scripts/profile.php"; ?>
 <? include "head.php"; ?>
+<?
+if(isset($_GET["UserId"])){
+    $UserId = $_GET["UserId"];
+    if($CookiesValidated == 1){
+        if($UserId == $Id){
+            $CurrentUser = true;
+        }
+    }
+}
+?>
 <div class=" profileHead">
   	<div class="row" style=" position:relative; height:100%;">
-        <div class="profileAvatar columns" style="background-image:url(_lib/images/profile/11966331.jpg);"></div> <!-- Display Profile Avatar -->
+        <div class="profileAvatar columns" style="background-image:url('<? echo $Avatar; ?>');"><? if($CurrentUser){ ?><a style="display:none;" href="editAvatar.php?UserId=<? echo $UserId; ?>" class="profileAvatar-edit button">Edit Avatar</a><? } ?></div> <!-- Display Profile Avatar -->
         <div class="profileDesc columns">
       		<h1><? echo $FirstName . " " . $LastName; ?></h1>
       		<h3><? echo $Major; ?></h3>
@@ -12,6 +22,13 @@
 
 <div class="row  thumbnails">
 	<div class="bio medium-3 columns">
+        <?
+        if($CurrentUser){
+            echo "<div>";
+            echo "<a href='editProfile.php?UserId=" . $UserId . "' class='button'>Edit Profile</a>";
+            echo "</div>";
+        }
+        ?>
         <ul class="accordion profile_acc" data-accordion role="tablist">
             <li class="accordion-navigation">
                 <a href="#panel1d" role="tab" id="panel1d-heading" aria-controls="panel1d">Contact Info</a>
@@ -71,5 +88,21 @@
         </ul>
     </div>
 </div>
+
+<? if($CurrentUser){ ?>
+<script>
+    $(document).ready(function(){
+        if(<? echo $CurrentUser; ?>){
+            $(".profileAvatar").hover(
+                function(){
+                    $(".profileAvatar-edit").show(); 
+                }, function(){
+                    $(".profileAvatar-edit").hide();
+                }
+            );
+        }
+    });
+</script>
+<? } ?>
 
 <? include "footer.php"; ?>
