@@ -17,7 +17,7 @@ if(isset($_COOKIE['UserName']) && isset($_COOKIE['Password'])){
 		}
 		if($Password == $HPW){
 			echo "<li class='has-dropdown'>";
-          	echo "<a href='#'><img src='" . $Avatar . "'/>" . $FirstName . "</a>";
+          	echo "<a href='profile.php?UserId=" . $Id . "'><img src='" . $Avatar . "'/>" . $FirstName . "</a>";
           	echo "<ul class='dropdown'>";
             echo "<li><a href='profile.php?UserId=" . $Id ."'>Profile</a></li>";
             echo "<li><a href='#'>Options</a></li>";

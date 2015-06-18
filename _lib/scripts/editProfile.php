@@ -1,5 +1,5 @@
 <?
-if(isset($_GET["UserId"])){
+if(isset($_GET["UserId"]) && $CookiesValidate){
 
 	$UserId = $_GET["UserId"];
 

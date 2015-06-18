@@ -20,6 +20,9 @@ if(isset($_GET["UserId"])){
     </div>
 </div>
 
+<div class="small-6 medium-4 columns">
+</div>
+
 <div class="row  thumbnails">
 	<div class="bio medium-3 columns">
         <?

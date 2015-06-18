@@ -17,5 +17,5 @@ while(file_exists($uploadFilename = $uploadsDirectory.$now.'-'.$UserId.'-'.$User
 
 include("../api/users/UpdateAvatar.php");
 
-header('Location: profile.php?UserId=' . $UserId);
+header('Location: ' . $_SERVER["DOCUMENT_ROOT"]. 'profile.php?UserId=' . $UserId);
 ?>

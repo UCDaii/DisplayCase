@@ -1,11 +1,12 @@
 <? include "_lib/scripts/mysqli_conn.php"; ?>
 <?
-if(isset($_POST["UserId"])){
-	$UserId = $_POST["UserId"];
+if(isset($_GET["UserId"]) && $CookiesValidate){
+	$UserId = $_GET["UserId"];
 	include "_lib/api/users/GatherUserProfileByUserId.php";
 	$Count = mysqli_num_rows($Sql);
 	if ($Count > 0) {
-		while($Row = mysqli_fetch_array($Sql)){ 
+		while($Row = mysqli_fetch_array($Sql)){
+			$UserId = $Row["UserId"];
 		    $Avatar = $Row["Avatar"];
 		    $UserName = $Row["UserName"];
 		}
@@ -22,10 +23,9 @@ if(isset($_POST["UserId"])){
 <div class="row">
 	<form action="_lib/scripts/updateAvatar.php" method="post" enctype="multipart/form-data">
 		<input type="file" name="Avatar"/>
-		<input type="hidden" name="UserId" value="<? echo $UserId; ?>"/>
 		<input type="hidden" name="UserName" value="<? echo $UserName; ?>"/>
+		<input type="hidden" name="UserId" value="<? echo $UserId; ?>"/>
 		<input class="button" type="submit" value="Save Changes" name="submit"/>
 	</form>
 </div>
-
 <? include "footer.php"; ?>
