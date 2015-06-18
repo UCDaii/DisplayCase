@@ -460,6 +460,39 @@ footer a:hover{
 	color:#A8A8A8;
 }
 
+.square
+{
+	background-color:grey;
+	color: white;
+	font-family:"roboto";
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.row
+{
+	max-width: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 900px) {
   .hero, .profileHead{
   	height:175px;

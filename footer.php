@@ -2,6 +2,8 @@
 <footer><a href="#">Term &amp Conditons</footer>
 
 <script src="_lib/js/foundation/foundation.accordion.js"></script>
+<script src="_lib/js/site.js"></script>
+
 
 <script>
 $(document).foundation({
